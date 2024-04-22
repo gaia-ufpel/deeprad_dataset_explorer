@@ -14,3 +14,11 @@ This is a dataset explorer focused on image datasets.
 
 - [ ] YOLOv8
 - [ ] COCO
+
+## How to install and run
+
+You will need to clone this repository with `git clone https://github.com/gaia-ufpel/deeprad_dataset_explorer.git`
+
+Then you'll need to install the poetry python package with `pip install poetry`, and run: `poetry install`, to create a virtual environment with all dependencies.
+
+After that, you can run the project with: `poetry run python main.py`

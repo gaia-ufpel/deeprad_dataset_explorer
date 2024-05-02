@@ -8,10 +8,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dearpygui = "^1.11.1"
 pandas = "^2.2.2"
 matplotlib = "^3.8.4"
 pyyaml = "^6.0.1"
+wxpython = "^4.2.1"
 
 
 [build-system]

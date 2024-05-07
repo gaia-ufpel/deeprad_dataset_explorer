@@ -6,6 +6,7 @@ import glob
 import math
 import shutil
 import random
+import numpy as np
 from PIL import Image
 from logging import Logger
 from dataclasses import dataclass
@@ -72,7 +73,7 @@ class Dataset:
         """
         TODO: Add documentation
         """
-        return self.image_id2image_name[image_id]
+        return np.array(Image.open(os.path.join(self.data_path, self.image_id2image_name[image_id])))
     
     def __iter__(self):
         """
@@ -80,6 +81,12 @@ class Dataset:
         """
         return iter(self.image_id2image_name.keys())
     
+    def get_image(self, image_id: int):
+        return np.array(Image.open(os.path.join(self.data_path, self.image_id2image_name[image_id])))
+
+    def get_annotation(self, annotation_id: int):
+        return self.annotation_id2annotation[annotation_id]
+
     def count_classe_instances(self):
         """
         TODO: Add documentation

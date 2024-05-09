@@ -9,5 +9,6 @@ class SegmentationAnnotator:
     def annotate(self, image_id: int):
         image = self.dataset[image_id]
         mask = np.zeros(image.shape, dtype=np.uint8)
+        mask = cv2.fillPoly(mask, )
         mask = cv2.addWeighted(image, 0.5, mask, 0.5, 0)
         return mask

@@ -8,7 +8,7 @@ class LabelAnnotator:
 
     def annotate(self, image_id: int):
         image = self.dataset[image_id]
-        mask = np.zeros(image.shape, dtype=np.uint8)
+        image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
         mask = cv2.putText(mask, 'Label', (10, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
         mask = cv2.addWeighted(image, 0.5, mask, 0.5, 0)
         return mask
